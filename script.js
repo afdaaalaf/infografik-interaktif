@@ -80,22 +80,6 @@ document.querySelectorAll('a:not([href^="#"])').forEach((link) => {
 });
 
 /* ========================================
-   HOVER SOUND EFFECT (Optional - Disabled by default)
-   ======================================== */
-
-// Uncomment below to enable hover sounds
-/*
-const hoverSound = new Audio('data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBSuBzvLZizcIGWi77eeTQw==');
-
-document.querySelectorAll('.small-circle').forEach(circle => {
-    circle.addEventListener('mouseenter', () => {
-        hoverSound.currentTime = 0;
-        hoverSound.play().catch(() => {}); // Catch error if autoplay is blocked
-    });
-});
-*/
-
-/* ========================================
    INTERSECTION OBSERVER FOR ANIMATIONS
    ======================================== */
 
@@ -120,15 +104,43 @@ document.querySelectorAll(".detail-section, .detail-card").forEach((el) => {
 });
 
 /* ========================================
-   MOBILE MENU HANDLING (if needed in future)
+   BUTTON HOVER SOUND EFFECT (Optional)
+   ======================================== */
+
+// Uncomment to enable hover sound
+/*
+const hoverSound = new Audio('data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBSuBzvLZizcIGWi77eeTQw==');
+
+document.querySelectorAll('.nasi-goreng-button').forEach(button => {
+    button.addEventListener('mouseenter', () => {
+        hoverSound.currentTime = 0;
+        hoverSound.play().catch(() => {});
+    });
+});
+*/
+
+/* ========================================
+   MOBILE MENU HANDLING
    ======================================== */
 
 // Detect mobile device
 const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
 if (isMobile) {
-	console.log("Mobile device detected");
-	// Add mobile-specific behaviors here if needed
+	console.log("Mobile device detected - using 1-column layout");
+
+	// Disable hover effects on mobile (use tap instead)
+	document.querySelectorAll(".nasi-goreng-button").forEach((button) => {
+		button.addEventListener("touchstart", function () {
+			this.style.transform = "scale(1.05)";
+		});
+
+		button.addEventListener("touchend", function () {
+			setTimeout(() => {
+				this.style.transform = "scale(1)";
+			}, 200);
+		});
+	});
 }
 
 /* ========================================
@@ -150,27 +162,47 @@ function debounce(func, wait) {
 
 // Handle window resize
 const handleResize = debounce(() => {
-	// Add resize handling logic here if needed
-	console.log("Window resized");
+	console.log("Window resized - responsive layout adjusted");
 }, 250);
 
 window.addEventListener("resize", handleResize);
 
 /* ========================================
-   KEYBOARD NAVIGATION (for center circle)
+   KEYBOARD NAVIGATION
    ======================================== */
 
-// Allow Enter key to activate center circle
-document
-	.querySelectorAll(".center-circle, .small-circle")
-	.forEach((element) => {
-		element.setAttribute("tabindex", "0");
-		element.addEventListener("keypress", (e) => {
-			if (e.key === "Enter" && element.tagName === "A") {
-				element.click();
-			}
-		});
+// Allow Enter key to activate buttons
+document.querySelectorAll(".nasi-goreng-button").forEach((button) => {
+	button.setAttribute("tabindex", "0");
+	button.addEventListener("keypress", (e) => {
+		if (e.key === "Enter") {
+			button.click();
+		}
 	});
+});
+
+/* ========================================
+   LAZY LOADING IMAGES (Future Enhancement)
+   ======================================== */
+
+// Uncomment when you add real images
+/*
+if ('IntersectionObserver' in window) {
+    const imageObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.style.opacity = '1';
+                imageObserver.unobserve(img);
+            }
+        });
+    });
+
+    document.querySelectorAll('.image-placeholder, .button-icon').forEach(img => {
+        imageObserver.observe(img);
+    });
+}
+*/
 
 /* ========================================
    CONSOLE WELCOME MESSAGE
@@ -178,13 +210,13 @@ document
 
 console.log(
 	"%c🍚 Ragam Nasi Goreng Indonesia 🍚",
-	"font-size: 20px; font-weight: bold; color: #FF6B9D;"
+	"font-size: 20px; font-weight: bold; color: #FF8B5A;"
 );
 console.log(
-	"%cSelamat datang! Website ini dibuat dengan ❤️",
-	"font-size: 14px; color: #4ECDC4;"
+	"%cSelamat datang! Website ini telah diperbarui dengan layout rectangular.",
+	"font-size: 14px; color: #636E72;"
 );
 console.log(
-	"%cTekan F12 untuk melihat kode sumber!",
-	"font-size: 12px; color: #FFD93D;"
+	"%cLayout otomatis berubah menjadi 1 kolom di mobile! 📱",
+	"font-size: 12px; color: #00B894;"
 );

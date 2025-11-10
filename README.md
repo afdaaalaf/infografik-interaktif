@@ -1,56 +1,83 @@
-# 🍚 Ragam Nasi Goreng Indonesia
+# 🍚 Ragam Nasi Goreng Indonesia - Infografik Interaktif (V2.0)
 
-> Interactive infographic website showcasing varieties of Indonesian fried rice
+> Interactive infographic website with rectangular layout showcasing varieties of Indonesian fried rice
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue)
+![Version](https://img.shields.io/badge/version-2.0.0-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Status](https://img.shields.io/badge/status-ready-brightgreen)
 
 ## 📋 Table of Contents
 
+- [What's New in V2.0](#-whats-new-in-v20)
 - [Overview](#-overview)
 - [Features](#-features)
 - [Project Structure](#-project-structure)
 - [Setup & Installation](#-setup--installation)
-- [GitHub Pages Deployment](#-github-pages-deployment)
-- [How It Works](#-how-it-works)
 - [Customization Guide](#-customization-guide)
-- [Technologies Used](#%EF%B8%8F-technologies-used)
+- [Responsive Behavior](#-responsive-behavior)
+- [Technologies Used](#-technologies-used)
 - [Browser Compatibility](#-browser-compatibility)
-- [Responsive Breakpoints](#-responsive-breakpoints)
-- [Contributing](#-contributing)
-- [License](#-license)
+
+---
+
+## 🆕 What's New in V2.0
+
+### Layout Changes
+- ✅ **Rectangular design** instead of circular layout
+- ✅ **Title box** at the top with heading and subtitle
+- ✅ **16:9 image box** for hero image (child with spoon and fork)
+- ✅ **2×3 button grid** on desktop (6 rectangular buttons)
+- ✅ **1×6 button stack** on mobile (automatically responsive)
+
+### Design Updates
+- ✅ **New simple color palette** (no neon, clean and professional)
+- ✅ **Smooth hover animation** - buttons scale to 1.1× with ease transition
+- ✅ **Background image support** (gradient placeholder included)
+- ✅ **Muted accent colors** for each button type
+- ✅ **Maintained dark/light mode** toggle
+
+### Technical Improvements
+- ✅ **Better mobile experience** with automatic stacking
+- ✅ **Improved touch interactions** for mobile devices
+- ✅ **Optimized animations** for performance
+- ✅ **Same file structure** - easy to upgrade
 
 ---
 
 ## 🎯 Overview
 
-**Ragam Nasi Goreng Indonesia** is an interactive, educational website that showcases six popular varieties of Indonesian fried rice through an engaging infographic interface. Designed for teenagers and young audiences, the site features:
+**Ragam Nasi Goreng Indonesia V2.0** is an interactive, educational website that showcases six popular varieties of Indonesian fried rice through a clean, modern rectangular layout. Designed for teenagers and young audiences with:
 
-- 🎨 Colorful, cartoon-style design
+- 🎨 Simple, professional design with muted colors
 - 🌓 Dark/Light mode toggle
-- 📱 Fully responsive layout
-- ✨ Smooth animations and transitions
-- 🖱️ Interactive hover effects
-- 🚀 Optimized for GitHub Pages deployment
+- 📱 Mobile-first responsive (auto-stacks on mobile)
+- ✨ Smooth hover and transition animations
+- 🖼️ 16:9 hero image area
+- 🚀 Optimized for GitHub Pages
 
 ---
 
 ## ✨ Features
 
-### Core Features
-- **Interactive Circle Navigation**: Click on any of the 6 fried rice varieties to learn more
-- **Theme Switching**: Toggle between light and dark modes with persistent preference
-- **Smooth Animations**: Staggered entrance animations and hover effects
-- **Responsive Design**: Works perfectly on mobile, tablet, and desktop
-- **Fast Loading**: Optimized CSS and vanilla JavaScript for quick load times
+### Visual Design
+- **Title Box**: Clean white box with title and subtitle
+- **Hero Image Area**: 16:9 aspect ratio image container
+- **Button Grid**: 2 columns × 3 rows on desktop
+- **Hover Effect**: Smooth scale(1.1) transformation
+- **Color Palette**: Simple, muted, professional tones
 
-### Design Features
-- Bright, cartoon-style color palette
-- Nunito font for friendly, readable text
-- Gradient backgrounds with smooth transitions
-- Shadow effects for depth
-- Circular layout inspired by modern infographics
+### Layout Behavior
+- **Desktop/Tablet (≥768px)**: 2-column grid layout
+- **Mobile (<768px)**: Automatically stacks into 1 column
+- **Smooth Transitions**: All interactions are fluid
+- **Responsive Images**: Maintains aspect ratio on all screens
+
+### Interactive Features
+- 🌓 **Theme Toggle**: Persistent light/dark mode
+- 🎬 **Page Transitions**: Fade in/out when navigating
+- 🖱️ **Hover Effects**: Scale up + shadow enhancement
+- 📱 **Touch Optimized**: Special interactions for mobile
+- ⌨️ **Keyboard Navigation**: Tab and Enter support
 
 ---
 
@@ -59,25 +86,26 @@
 ```
 ragam-nasi-goreng-indonesia/
 │
-├── index.html              # Main landing page
-├── style.css               # All styling and animations
-├── script.js               # Interactive functionality
+├── index.html              # Main page (updated rectangular layout)
+├── style.css               # Complete styling (new color palette)
+├── script.js               # Interactive logic (minimal changes)
 │
-├── pages/                  # Detail pages folder
-│   ├── nasigoreng-kambing.html
-│   ├── nasigoreng-seafood.html
-│   ├── nasigoreng-jawa.html
-│   ├── nasigoreng-ayam.html
-│   ├── nasigoreng-sapi.html
-│   └── nasigoreng-pete.html
+├── pages/                  # Detail pages (unchanged)
+│   ├── nasgor_kambing.html
+│   ├── nasgor_seafood.html
+│   ├── nasgor_jawa.html
+│   ├── nasgor_ayam.html
+│   ├── nasgor_sapi.html
+│   └── nasgor_pete.html
 │
-├── images/                 # Image assets (create this folder)
-│   ├── kambing.png
-│   ├── seafood.png
-│   ├── jawa.png
-│   ├── ayam.png
-│   ├── sapi.png
-│   └── pete.png
+├── images/                 # Image assets
+│   ├── hero-image.jpg      # Main 16:9 hero image (NEW)
+│   ├── kambing.jpeg         # Button icons
+│   ├── seafood.jpg
+│   ├── jawa.jpg
+│   ├── ayam.jpg
+│   ├── sapi.jpeg
+│   └── pete.jpg
 │
 └── README.md              # This file
 ```
@@ -86,428 +114,510 @@ ragam-nasi-goreng-indonesia/
 
 ## 🚀 Setup & Installation
 
-### Option 1: Quick Start (No Installation Required)
+### Quick Start
 
-1. Download or clone this repository
-2. Open `index.html` in any modern web browser
-3. Start exploring!
+1. **Download/Clone** the repository
+2. **Open** `index.html` in any modern browser
+3. **Works immediately** - no build process needed!
 
-### Option 2: Local Development Server
+### Local Development
 
 ```bash
 # Clone the repository
 git clone https://github.com/yourusername/ragam-nasi-goreng-indonesia.git
 
-# Navigate to project folder
+# Navigate to folder
 cd ragam-nasi-goreng-indonesia
 
-# If you have Python installed, run a local server:
+# Start local server (optional)
 python -m http.server 8000
-
-# Or with Node.js:
+# OR
 npx http-server
 
 # Open browser to http://localhost:8000
 ```
 
----
+### GitHub Pages Deployment
 
-## 🌐 GitHub Pages Deployment
+```bash
+# Initialize git
+git init
+git add .
+git commit -m "V2.0: Rectangular layout with auto-stacking mobile"
 
-### Step-by-Step Deployment
+# Push to GitHub
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/ragam-nasi-goreng-indonesia.git
+git push -u origin main
 
-1. **Create a GitHub Repository**
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit: Ragam Nasi Goreng Indonesia"
-   git branch -M main
-   git remote add origin https://github.com/yourusername/ragam-nasi-goreng-indonesia.git
-   git push -u origin main
-   ```
+# Enable GitHub Pages
+# Go to: Repository Settings → Pages → Source: main branch → Save
 
-2. **Enable GitHub Pages**
-   - Go to your repository on GitHub
-   - Click **Settings** → **Pages**
-   - Under "Source", select **main branch**
-   - Click **Save**
-   - Your site will be live at: `https://yourusername.github.io/ragam-nasi-goreng-indonesia/`
-
-3. **Wait 2-5 minutes** for deployment to complete
-
-4. **Test Your Site**
-   - Visit the URL provided
-   - Test all navigation links
-   - Toggle dark/light mode
-   - Check mobile responsiveness
-
-### Troubleshooting Deployment
-
-| Issue | Solution |
-|-------|----------|
-| Images not showing | Check image paths use relative URLs (`../images/`) |
-| Styles not loading | Ensure `style.css` is in root directory |
-| 404 errors | Verify all file names match exactly (case-sensitive) |
-| Dark mode not working | Clear browser cache and localStorage |
-
----
-
-## 🔧 How It Works
-
-### 1. **Main Page Logic** (`index.html`)
-
-The homepage displays:
-- A central "Macam-Macam Nasi Goreng" circle
-- 6 surrounding circles representing each variety
-- Each circle links to its detail page
-
-**Circle Positioning:**
-```
-        Kambing (Top)
-              ↑
-Pete (Left) ← CENTER → Seafood (Right)
-              ↓
-    Sapi    Ayam    Jawa
-  (Bottom)
-```
-
-### 2. **Styling System** (`style.css`)
-
-**Theme Variables:**
-```css
-:root {
-  --kambing-color: #FFD93D;   /* Sunshine yellow */
-  --seafood-color: #4ECDC4;   /* Ocean blue */
-  --jawa-color: #FF8B5A;      /* Warm orange */
-  /* ...and more */
-}
-```
-
-**Responsive Breakpoints:**
-- Desktop: > 768px (circular layout)
-- Tablet: 600px - 768px (adjusted sizes)
-- Mobile: < 600px (2-column grid)
-
-### 3. **Interactive Features** (`script.js`)
-
-**Key Functions:**
-
-```javascript
-// Theme toggle with localStorage
-toggleTheme() {
-  // Switches between light/dark mode
-  // Saves preference to localStorage
-}
-
-// Smooth page transitions
-fadeOut() {
-  // Fades out current page
-  // Navigates to new page
-  // Fades in new content
-}
-
-// Staggered animations
-staggeredAppear() {
-  // Circles appear one by one
-  // Using CSS animation delays
-}
-```
-
-### 4. **Animation Timeline**
-
-```
-0.0s: Page loads (fade in body)
-0.2s: Header appears
-0.4s: Center circle scales in
-0.5s: First small circle appears
-0.65s: Second small circle appears
-0.8s: Third small circle appears
-... (continues for all 6 circles)
+# Your site will be live at:
+# https://YOUR_USERNAME.github.io/ragam-nasi-goreng-indonesia/
 ```
 
 ---
 
 ## 🎨 Customization Guide
 
-### Changing Colors
+### 1. Adding Your Hero Image
 
-**Edit `style.css` in the `:root` section:**
+**Replace the placeholder:**
 
+```css
+/* In style.css, find .image-placeholder */
+.image-placeholder {
+    background-image: url('../images/hero-image.jpg');
+    /* Or use the body background approach */
+}
+```
+
+**Image specifications:**
+- **Aspect Ratio**: 16:9 (1920×1080px recommended)
+- **Format**: JPG or JPEG
+- **Size**: < 500 KB for fast loading
+- **Subject**: Child holding spoon and fork
+- **Style**: Bright, friendly, high quality
+
+### 2. Changing Colors
+
+**Light Mode:**
 ```css
 :root {
-  /* Background gradient */
-  --bg-gradient-start: #YOUR_COLOR;
-  --bg-gradient-end: #YOUR_COLOR;
-  
-  /* Individual circle colors */
-  --kambing-color: #YOUR_COLOR;
-  --seafood-color: #YOUR_COLOR;
-  /* ... */
+    --bg-gradient-start: #FFF5E4;  /* Cream */
+    --bg-gradient-end: #FFE5D9;    /* Light Peach */
+    --button-bg: #F5F5F5;          /* Light Gray */
+    /* Edit these as needed */
 }
 ```
 
-### Adding Images
-
-1. **Create an `/images` folder** in the root directory
-
-2. **Add your images** (recommended: PNG with transparent background)
-   - `kambing.png` (goat icon)
-   - `seafood.png` (shrimp icon)
-   - `jawa.png` (bowl icon)
-   - `ayam.png` (chicken icon)
-   - `sapi.png` (beef icon)
-   - `pete.png` (bean icon)
-
-3. **Images will automatically replace emoji placeholders**
-
-**Image Specifications:**
-- Format: PNG or JPG
-- Size: 150x150px minimum
-- Background: Transparent (for PNG)
-- Style: Cartoon/illustration style recommended
-
-### Editing Content
-
-**To change descriptions:**
-
-1. Open any file in `/pages/` folder
-2. Find the `<div class="detail-section">` blocks
-3. Replace Lorem Ipsum text with real content
-
-**Example:**
-```html
-<div class="detail-section">
-  <h3>Tentang Nasi Goreng Kambing</h3>
-  <p>Your custom description here...</p>
-</div>
+**Dark Mode:**
+```css
+[data-theme="dark"] {
+    --bg-gradient-start: #1E293B;  /* Navy */
+    --bg-gradient-end: #0F172A;    /* Darker Navy */
+    --button-bg: #475569;          /* Medium Gray */
+    /* Edit these as needed */
+}
 ```
 
-### Changing Animation Speed
-
-**In `style.css`, adjust animation durations:**
+### 3. Adjusting Hover Animation Speed
 
 ```css
-/* Make circles appear faster */
-@keyframes staggeredAppear {
-  /* Change from 0.6s to 0.3s for faster */
+/* In style.css, find .nasi-goreng-button */
+.nasi-goreng-button {
+    transition: transform 0.3s ease; /* Change 0.3s to 0.2s for faster */
 }
 
-/* Hover effect speed */
-.small-circle {
-  transition: all 0.4s ease; /* Change to 0.2s for faster */
+.nasi-goreng-button:hover {
+    transform: scale(1.1); /* Change 1.1 to 1.15 for more zoom */
 }
 ```
 
-### Adding More Dishes
+### 4. Modifying Button Layout
 
-1. **Create a new HTML file** in `/pages/`:
-   ```
-   nasigoreng-newdish.html
-   ```
+**Change from 2 columns to 3 columns (desktop):**
+```css
+.buttons-grid {
+    grid-template-columns: repeat(3, 1fr); /* Change 2 to 3 */
+}
+```
 
-2. **Copy content** from existing page (e.g., `nasigoreng-kambing.html`)
+**Adjust gap between buttons:**
+```css
+.buttons-grid {
+    gap: 20px; /* Change to 15px or 25px */
+}
+```
 
-3. **Update content** and colors
+### 5. Adding Background Image to Body
 
-4. **Add to main page** (`index.html`):
-   ```html
-   <a href="pages/nasigoreng-newdish.html" class="circle small-circle">
-     <div class="circle-image newdish-img"></div>
-     <span class="circle-label">Nasi Goreng New Dish</span>
-   </a>
-   ```
+**Option 1: Using your own image**
+```css
+body {
+    background-image: url('../images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+```
 
-5. **Add CSS styling** in `style.css`:
-   ```css
-   :root {
-     --newdish-color: #YOUR_COLOR;
-   }
-   
-   .newdish-img {
-     background-image: url('../images/newdish.png');
-   }
-   ```
+**Option 2: Using a pattern**
+```css
+body {
+    background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/food.png');
+    background-repeat: repeat;
+}
+```
+
+### 6. Editing Content
+
+**Title and Subtitle:**
+```html
+<!-- In index.html -->
+<h1 class="main-title">Your Custom Title Here</h1>
+<p class="main-subtitle">Your custom subtitle</p>
+```
+
+**Button Labels:**
+```html
+<!-- In index.html -->
+<span class="button-label">Your Custom Label</span>
+```
+
+**Detail Pages:**
+- Open any file in `/pages` folder
+- Replace Lorem Ipsum with real content
+- Keep the HTML structure intact
+
+---
+
+## 📱 Responsive Behavior
+
+### Desktop Layout (≥768px)
+
+```
+┌─────────────────────────────────┐
+│     RAGAM NASI GORENG           │  ← Title Box
+└─────────────────────────────────┘
+
+┌─────────────────────────────────┐
+│                                 │
+│         HERO IMAGE              │  ← 16:9 Image
+│         (Child with utensils)   │
+└─────────────────────────────────┘
+
+┌──────────────┐  ┌──────────────┐
+│ Nasi Goreng  │  │ Nasi Goreng  │  ← Row 1
+│   Kambing    │  │   Ayam       │
+└──────────────┘  └──────────────┘
+
+┌──────────────┐  ┌──────────────┐
+│ Nasi Goreng  │  │ Nasi Goreng  │  ← Row 2
+│   Seafood    │  │   Sapi       │
+└──────────────┘  └──────────────┘
+
+┌──────────────┐  ┌──────────────┐
+│ Nasi Goreng  │  │ Nasi Goreng  │  ← Row 3
+│   Jawa       │  │   Pete       │
+└──────────────┘  └──────────────┘
+```
+
+### Mobile Layout (<768px)
+
+```
+┌─────────────────┐
+│ RAGAM NASI      │  ← Title Box (narrower)
+│ GORENG          │
+└─────────────────┘
+
+┌─────────────────┐
+│                 │
+│   HERO IMAGE    │  ← 16:9 Image (full width)
+│                 │
+└─────────────────┘
+
+┌─────────────────┐
+│ Nasi Goreng     │  ← Button 1
+│   Kambing       │
+└─────────────────┘
+
+┌─────────────────┐
+│ Nasi Goreng     │  ← Button 2
+│   Seafood       │
+└─────────────────┘
+
+┌─────────────────┐
+│ Nasi Goreng     │  ← Button 3
+│   Jawa          │
+└─────────────────┘
+
+┌─────────────────┐
+│ Nasi Goreng     │  ← Button 4
+│   Ayam          │
+└─────────────────┘
+
+┌─────────────────┐
+│ Nasi Goreng     │  ← Button 5
+│   Sapi          │
+└─────────────────┘
+
+┌─────────────────┐
+│ Nasi Goreng     │  ← Button 6
+│   Pete          │
+└─────────────────┘
+```
+
+### Breakpoint Details
+
+| Screen Size | Layout | Columns | Gap |
+|-------------|--------|---------|-----|
+| ≥1024px | Desktop | 2 | 20px |
+| 768px - 1023px | Tablet | 2 | 15px |
+| <768px | Mobile | 1 | 15px |
+| <360px | Small Mobile | 1 | 15px (compact) |
 
 ---
 
 ## 🛠️ Technologies Used
 
-| Technology | Purpose | Version |
-|------------|---------|---------|
-| HTML5 | Structure and content | - |
-| CSS3 | Styling and animations | - |
-| JavaScript (Vanilla) | Interactivity | ES6+ |
-| Google Fonts | Typography (Nunito) | - |
-| localStorage API | Theme persistence | - |
+| Technology | Purpose | Notes |
+|------------|---------|-------|
+| HTML5 | Structure | Semantic elements |
+| CSS3 | Styling & Animation | Grid, Flexbox, Variables |
+| JavaScript (Vanilla) | Interactivity | ES6+, no frameworks |
+| Google Fonts | Typography (Nunito) | Self-hosted option available |
+| localStorage API | Theme persistence | Browser-based storage |
 
-**No frameworks or libraries required!** This project uses only native web technologies for maximum compatibility and performance.
+**No dependencies, no build tools, no frameworks!**
 
 ---
 
 ## 🌍 Browser Compatibility
 
-| Browser | Minimum Version | Status |
-|---------|----------------|--------|
+| Browser | Version | Status |
+|---------|---------|--------|
 | Chrome | 90+ | ✅ Fully Supported |
 | Firefox | 88+ | ✅ Fully Supported |
 | Safari | 14+ | ✅ Fully Supported |
 | Edge | 90+ | ✅ Fully Supported |
 | Opera | 76+ | ✅ Fully Supported |
-| Mobile Safari | iOS 14+ | ✅ Fully Supported |
-| Chrome Mobile | Android 90+ | ✅ Fully Supported |
+| Mobile Browsers | iOS 14+, Android 10+ | ✅ Optimized |
 
-**Features requiring modern browsers:**
-- CSS Grid & Flexbox
-- CSS Custom Properties (variables)
+### Required Features
+- CSS Grid Layout
+- CSS Variables (Custom Properties)
+- CSS Transforms & Transitions
 - localStorage API
-- CSS Animations
-- Smooth Scrolling
+- ES6 JavaScript
 
 ---
 
-## 📱 Responsive Breakpoints
+## 🎯 Key Features Explained
 
+### 1. Auto-Stacking Mobile Layout
+
+**How it works:**
 ```css
-/* Desktop (default) */
-> 768px: Circular layout, full animations
+/* Desktop: 2 columns */
+.buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
 
-/* Tablet */
-600px - 768px: Reduced circle sizes, maintained layout
-
-/* Mobile */
-< 600px: 2-column grid, stacked layout
+/* Mobile: 1 column (automatic stacking) */
+@media (max-width: 767px) {
+    .buttons-grid {
+        grid-template-columns: 1fr;
+    }
+}
 ```
 
-**Test your site at these widths:**
-- 320px (small phone)
-- 375px (iPhone SE)
-- 768px (tablet)
-- 1024px (laptop)
-- 1920px (desktop)
+**Benefits:**
+- ✅ No JavaScript needed
+- ✅ Automatic at breakpoint
+- ✅ Smooth transition
+- ✅ Better mobile UX
+
+### 2. Smooth Hover Animation
+
+**Implementation:**
+```css
+.nasi-goreng-button {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nasi-goreng-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px var(--box-shadow-hover);
+}
+```
+
+**Timing breakdown:**
+- **0.0s**: Normal state
+- **0.15s**: 50% of scale animation
+- **0.3s**: Full scale + shadow
+
+### 3. 16:9 Aspect Ratio Lock
+
+**CSS trick:**
+```css
+.image-content {
+    width: 100%;
+    padding-bottom: 56.25%; /* 9/16 = 0.5625 = 56.25% */
+}
+```
+
+**Why?** Maintains perfect 16:9 ratio on all screen sizes without JavaScript.
+
+### 4. Theme Persistence
+
+**Flow:**
+1. User toggles theme
+2. Saved to localStorage: `theme: 'dark'`
+3. Page reload → Check localStorage
+4. Apply saved theme automatically
+
+---
+
+## 📊 Performance Metrics
+
+### Load Times (estimated)
+- **First Contentful Paint**: < 1.0s
+- **Time to Interactive**: < 1.5s
+- **Largest Contentful Paint**: < 2.0s (depends on images)
+
+### Lighthouse Scores (target)
+- **Performance**: 90+
+- **Accessibility**: 85+
+- **Best Practices**: 95+
+- **SEO**: 100
+
+---
+
+## 🔧 Troubleshooting
+
+### Issue: Buttons don't stack on mobile
+
+**Solution:** Check viewport meta tag
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+```
+
+### Issue: Hero image not showing
+
+**Solution:** Check file path and format
+```css
+/* Correct path (from CSS file location) */
+background-image: url('../images/hero-image.jpg');
+
+/* Verify file exists at: */
+/* /images/hero-image.jpg */
+```
+
+### Issue: Hover animation too fast/slow
+
+**Solution:** Adjust transition duration
+```css
+.nasi-goreng-button {
+    transition: transform 0.3s ease; /* Change 0.3s */
+}
+```
+
+### Issue: Colors look wrong in dark mode
+
+**Solution:** Clear localStorage and refresh
+```javascript
+// In browser console:
+localStorage.clear();
+location.reload();
+```
+
+---
+
+## 📈 Upgrade from V1.0
+
+### Migration Steps
+
+1. **Backup** your current V1.0 files
+2. **Replace** `index.html` with new version
+3. **Replace** `style.css` with new version
+4. **Keep** `script.js` (or use new version)
+5. **Keep** all files in `/pages` folder (unchanged)
+6. **Add** hero image to `/images` folder
+7. **Test** on desktop and mobile
+
+### What's Preserved
+- ✅ All detail pages (no changes needed)
+- ✅ Theme toggle functionality
+- ✅ Page transition effects
+- ✅ File structure
+- ✅ localStorage data
+
+### What's New
+- ✅ Rectangular layout
+- ✅ 16:9 hero image area
+- ✅ Auto-stacking mobile layout
+- ✅ New color palette
+- ✅ Improved hover animations
+
+---
+
+## 🎓 Learning Resources
+
+### CSS Grid Layout
+- [CSS Tricks - Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
+- [MDN - CSS Grid Layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout)
+
+### Responsive Design
+- [MDN - Responsive Design](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design)
+- [Web.dev - Responsive Images](https://web.dev/responsive-images/)
+
+### CSS Animations
+- [CSS Tricks - CSS Animations](https://css-tricks.com/almanac/properties/a/animation/)
+- [MDN - Using CSS Transitions](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions)
 
 ---
 
 ## 🤝 Contributing
 
-Want to improve this project? Here's how:
+Contributions welcome! Areas for improvement:
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-**Contribution Ideas:**
-- Add more fried rice varieties
-- Improve animations
-- Add sound effects
-- Create print-friendly version
-- Add recipe details
-- Implement search functionality
-- Add multi-language support
+- 📸 Better image optimization
+- ♿ Enhanced accessibility features
+- 🌐 Multi-language support
+- 🎨 Additional color themes
+- 📱 Progressive Web App (PWA) support
+- 🔍 Search functionality
 
 ---
 
 ## 📄 License
 
-This project is licensed under the **MIT License**.
+MIT License - Free to use and modify
 
-```
-MIT License
+---
 
-Copyright (c) 2025 Ragam Nasi Goreng Indonesia
+## 🎉 What's Next?
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software...
-```
+### Immediate Tasks
+1. ✅ Add your hero image (child with spoon and fork)
+2. ✅ Replace Lorem Ipsum with real content
+3. ✅ Add custom button icons
+4. ✅ Deploy to GitHub Pages
 
-**You can:**
-- ✅ Use commercially
-- ✅ Modify
-- ✅ Distribute
-- ✅ Private use
-
-**You must:**
-- 📋 Include license and copyright notice
+### Future Enhancements
+- 📖 Recipe details and cooking instructions
+- ⭐ User ratings and reviews
+- 📍 Regional variations map
+- 🎥 Video tutorials
+- 🛒 Ingredient shopping list
+- 📱 Mobile app version
 
 ---
 
 ## 📞 Support
 
-Need help? Found a bug? Have suggestions?
-
-- **Issues**: [GitHub Issues](https://github.com/yourusername/infografik-interaktif/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/infografik-interaktif/discussions)
-
----
-
-## 🎓 Educational Use
-
-This project is perfect for:
-- Web development students learning HTML/CSS/JS
-- Teaching responsive design
-- Understanding animation timing
-- Learning localStorage API
-- GitHub Pages deployment practice
-
-**Classroom Usage:**
-- Free to use in educational settings
-- Modify for student projects
-- Use as a template for assignments
+Need help?
+- **Issues**: [GitHub Issues](https://github.com/yourusername/ragam-nasi-goreng-indonesia/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/yourusername/ragam-nasi-goreng-indonesia/discussions)
 
 ---
 
 ## 🙏 Acknowledgments
 
-- **Google Fonts** for the beautiful Nunito typeface
-- Indonesian culinary culture for the inspiration
-- All contributors and users of this project
-
----
-
-## 📊 Project Stats
-
-- **Lines of Code**: ~1,500
-- **File Size**: < 50 KB (total)
-- **Load Time**: < 1 second
-- **Lighthouse Score**: 95+ (Performance, Accessibility, SEO)
-- **Carbon Footprint**: Minimal (static site)
-
----
-
-## 🔮 Future Enhancements
-
-**Planned Features:**
-- [ ] Recipe details with ingredients
-- [ ] User ratings and reviews
-- [ ] Share to social media
-- [ ] Print-friendly version
-- [ ] Accessibility improvements (ARIA labels)
-- [ ] Multi-language support (English, Indonesian)
-- [ ] Regional variations map
-- [ ] Video demonstrations
-
----
-
-## 📝 Changelog
-
-### Version 1.0.0 (Current)
-- ✨ Initial release
-- ✅ 6 fried rice varieties
-- ✅ Dark/Light mode
-- ✅ Fully responsive
-- ✅ Smooth animations
-- ✅ GitHub Pages ready
+- **Design Inspiration**: Modern infographic layouts
+- **Google Fonts**: Nunito typeface
+- **Indonesian Culinary Culture**: Recipe inspiration
+- **Community**: All contributors and users
 
 ---
 
 **Made with ❤️ for Indonesian food lovers**
 
-🍚 **Selamat menjelajah!** (Happy exploring!)
+🍚 **Selamat menikmati versi baru!** (Enjoy the new version!)
 
 ---
 
-*Last Updated: November 2025*
+*Last Updated: 10 November 2025 - Version 2.0.0*
