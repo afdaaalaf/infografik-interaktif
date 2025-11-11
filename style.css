@@ -179,7 +179,7 @@ body {
 		var(--accent-3) 100%
 	);
 	/* Replace this with your image */
-	background-image: url("../images/hero-image.jpg");
+	background-image: url("images/hero-image.jpg");
 	background-size: cover;
 	background-position: center;
 }
@@ -320,37 +320,37 @@ body {
 
 /* Icon placeholders - replace with your images */
 .kambing-icon {
-	background-image: url("../images/kambing.jpeg");
+	background-image: url("images/kambing.jpeg");
 	background-size: cover;
 	background-position: center;
 }
 
 .seafood-icon {
-	background-image: url("../images/seafood.jpg");
+	background-image: url("images/seafood.jpg");
 	background-size: cover;
 	background-position: center;
 }
 
 .jawa-icon {
-	background-image: url("../images/jawa.jpg");
+	background-image: url("images/jawa.jpg");
 	background-size: cover;
 	background-position: center;
 }
 
 .ayam-icon {
-	background-image: url("../images/ayam.jpg");
+	background-image: url("images/ayam.jpg");
 	background-size: cover;
 	background-position: center;
 }
 
 .sapi-icon {
-	background-image: url("../images/sapi.jpeg");
+	background-image: url("images/sapi.jpeg");
 	background-size: cover;
 	background-position: center;
 }
 
 .pete-icon {
-	background-image: url("../images/pete.jpg");
+	background-image: url("images/pete.jpg");
 	background-size: cover;
 	background-position: center;
 }
