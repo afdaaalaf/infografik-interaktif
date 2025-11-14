@@ -1,98 +1,146 @@
 <!DOCTYPE html>
 <html lang="id">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>🍚 Ragam Nasi Goreng Indonesia 🍚</title>
-		<link rel="stylesheet" href="style.css" />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap"
-			rel="stylesheet"
-		/>
-	</head>
-	<body>
-		<!-- Dark/Light Mode Toggle -->
-		<button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-			<span class="sun">☀️</span>
-			<span class="moon">🌙</span>
-		</button>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🍚 Ragam Nasi Goreng Indonesia 🍚</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Dark/Light Mode Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <span class="sun">☀️</span>
+        <span class="moon">🌙</span>
+    </button>
 
-		<div class="container">
-			<!-- Title Box -->
-			<div class="title-box">
-				<h1 class="main-title">🍚 Ragam Nasi Goreng Indonesia 🍚</h1>
-				<p class="main-subtitle">
-					Jelajahi berbagai jenis nasi goreng khas Nusantara
-				</p>
-			</div>
+    <div class="container">
+        <!-- Title Box -->
+        <div class="title-box">
+            <h1 class="main-title">🍚 Ragam Nasi Goreng Indonesia 🍚</h1>
+            <p class="main-subtitle">Jelajahi berbagai jenis nasi goreng khas Nusantara</p>
+        </div>
 
-			<!-- Main Image Box (16:9 aspect ratio) -->
-			<div class="image-box">
-				<div class="image-content">
-					<!-- Placeholder for child holding spoon and fork image -->
-					<div class="image-placeholder">
-						<span class="placeholder-icon">🍴</span>
-						<p class="placeholder-text">
-							Gambar anak memegang sendok dan garpu
-						</p>
-					</div>
-				</div>
-			</div>
+        <!-- Image Slider Box (16:9 aspect ratio) -->
+        <div class="image-box">
+            <div class="slider-container">
+                <!-- Slider Wrapper -->
+                <div class="slider-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="slide active">
+                        <img src="images/infografik-0.png" alt="infografik 0">
+                        <!-- <div class="slide-content">
+                            <h2 class="slide-title">Nasi Goreng Kambing</h2>
+                            <p class="slide-description">Kenikmatan nasi goreng dengan daging kambing yang gurih dan bumbu khas</p>
+                        </div> -->
+                    </div>
 
-			<!-- Nasi Goreng Buttons Grid (2x3 on desktop, 1x6 on mobile) -->
-			<div class="buttons-grid">
-				<a
-				href="pages/nasgor_kambing.html"
-				class="nasi-goreng-button kambing-btn"
-				>
-					<div class="button-icon kambing-icon"></div>
-					<span class="button-label">Nasi Goreng Kambing</span>
-				</a>
+                    <!-- Slide 2 -->
+                    <div class="slide slide-position">
+                        <img src="images/infografik-2.png" alt="infografik 1">
+                        <!-- <div class="slide-content">
+                            <h2 class="slide-title">Nasi Goreng Seafood</h2>
+                            <p class="slide-description">Cita rasa laut dalam setiap gigitan dengan udang dan cumi segar</p>
+                        </div> -->
+                    </div>
 
-				<a
-					href="pages/nasgor_seafood.html"
-					class="nasi-goreng-button seafood-btn"
-				>
-					<div class="button-icon seafood-icon"></div>
-					<span class="button-label">Nasi Goreng Seafood</span>
-				</a>
+                    <!-- Slide 3 -->
+                    <div class="slide">
+                        <img src="images/infografik-8.png" alt="infografik 2">
+                        <!-- <div class="slide-content">
+                            <h2 class="slide-title">Nasi Goreng Jawa</h2>
+                            <p class="slide-description">Bumbu tradisional Jawa yang autentik dan penuh rasa</p>
+                        </div> -->
+                    </div>
 
-				<a
-					href="pages/nasgor_jawa.html"
-					class="nasi-goreng-button jawa-btn"
-				>
-					<div class="button-icon jawa-icon"></div>
-					<span class="button-label">Nasi Goreng Jawa</span>
-				</a>
+                    <!-- Slide 4 -->
+                    <div class="slide">
+                        <img src="images/infografik-3.png" alt="infografik 3">
+                        <!-- <div class="slide-content">
+                            <h2 class="slide-title">Nasi Goreng Ayam</h2>
+                            <p class="slide-description">Klasik dan favorit keluarga dengan potongan ayam yang lezat</p>
+                        </div> -->
+                    </div>
 
-				<a
-					href="pages/nasgor_ayam.html"
-					class="nasi-goreng-button ayam-btn"
-				>
-					<div class="button-icon ayam-icon"></div>
-					<span class="button-label">Nasi Goreng Ayam</span>
-				</a>
+                    <!-- Slide 5 -->
+                    <div class="slide">
+                        <img src="images/infografik-6.png" alt="infografik 4">
+                        <!-- <div class="slide-content">
+                            <h2 class="slide-title">Nasi Goreng Sapi</h2>
+                            <p class="slide-description">Daging sapi empuk dengan bumbu yang meresap sempurna</p>
+                        </div> -->
+                    </div>
 
-				<a
-					href="pages/nasgor_sapi.html"
-					class="nasi-goreng-button sapi-btn"
-				>
-					<div class="button-icon sapi-icon"></div>
-					<span class="button-label">Nasi Goreng Sapi</span>
-				</a>
+                    <!-- Slide 6 -->
+                    <div class="slide slide-position">
+                        <img src="images/infografik-9.png" alt="infografik 5" class="slide-position">
+                        <!-- <div class="slide-content">
+                            <h2 class="slide-title">Nasi Goreng Pete</h2>
+                            <p class="slide-description">Sensasi unik pete yang khas dan menggugah selera</p>
+                        </div> -->
+                    </div>
+                </div>
 
-				<a
-					href="pages/nasgor_pete.html"
-					class="nasi-goreng-button pete-btn"
-				>
-					<div class="button-icon pete-icon"></div>
-					<span class="button-label">Nasi Goreng Pete</span>
-				</a>
-			</div>
-		</div>
+                <!-- Navigation Buttons -->
+                <button class="slider-btn prev-btn" aria-label="Previous slide">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+                <button class="slider-btn next-btn" aria-label="Next slide">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
 
-		<script src="script.js"></script>
-	</body>
+                <!-- Indicator Dots -->
+                <div class="slider-indicators">
+                    <button class="indicator active" data-slide="0" aria-label="Go to slide 1"></button>
+                    <button class="indicator" data-slide="1" aria-label="Go to slide 2"></button>
+                    <button class="indicator" data-slide="2" aria-label="Go to slide 3"></button>
+                    <button class="indicator" data-slide="3" aria-label="Go to slide 4"></button>
+                    <button class="indicator" data-slide="4" aria-label="Go to slide 5"></button>
+                    <button class="indicator" data-slide="5" aria-label="Go to slide 6"></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nasi Goreng Buttons Grid (2x3 on desktop, 1x6 on mobile) -->
+        <div class="buttons-grid">
+            <a href="pages/nasgor_kambing.html" class="nasi-goreng-button kambing-btn">
+                <div class="button-icon kambing-icon"></div>
+                <span class="button-label">Nasi Goreng Kambing</span>
+            </a>
+
+            <a href="pages/nasgor_seafood.html" class="nasi-goreng-button seafood-btn">
+                <div class="button-icon seafood-icon"></div>
+                <span class="button-label">Nasi Goreng Seafood</span>
+            </a>
+
+            <a href="pages/nasgor_jawa.html" class="nasi-goreng-button jawa-btn">
+                <div class="button-icon jawa-icon"></div>
+                <span class="button-label">Nasi Goreng Jawa</span>
+            </a>
+
+            <a href="pages/nasgor_ayam.html" class="nasi-goreng-button ayam-btn">
+                <div class="button-icon ayam-icon"></div>
+                <span class="button-label">Nasi Goreng Ayam</span>
+            </a>
+
+            <a href="pages/nasgor_sapi.html" class="nasi-goreng-button sapi-btn">
+                <div class="button-icon sapi-icon"></div>
+                <span class="button-label">Nasi Goreng Sapi</span>
+            </a>
+
+            <a href="pages/nasgor_pete.html" class="nasi-goreng-button pete-btn">
+                <div class="button-icon pete-icon"></div>
+                <span class="button-label">Nasi Goreng Pete</span>
+            </a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
 </html>

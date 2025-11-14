@@ -1,621 +1,681 @@
 /* ========================================
-   GLOBAL STYLES & RESET
+   RAGAM NASI GORENG INDONESIA - STYLESHEET
+   Version: 2.1 (Fixed & Cleaned)
+   ======================================== */
+
+/* ========================================
+   1. GLOBAL STYLES & RESET
    ======================================== */
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+/* ========================================
+   2. CSS VARIABLES (Theme Colors)
+   ======================================== */
 :root {
-	/* Light Mode - Simple, Clean Palette */
-	--bg-gradient-start: #fff5e4;
-	--bg-gradient-end: #ffe5d9;
-	--text-primary: #2d3436;
-	--text-secondary: #636e72;
-	--box-bg: #ffffff;
-	--box-shadow: rgba(0, 0, 0, 0.08);
-	--box-shadow-hover: rgba(0, 0, 0, 0.15);
-	--button-bg: #f5f5f5;
-	--button-border: #e0e0e0;
-
-	/* Subtle Accent Colors */
-	--accent-1: #ffd7ba;
-	--accent-2: #bfdbfe;
-	--accent-3: #fed7aa;
-	--accent-4: #ffc9dd;
-	--accent-5: #fecaca;
-	--accent-6: #d1fae5;
+    /* Light Mode Colors */
+    --bg-gradient-start: #FFF5E4;
+    --bg-gradient-end: #FFE5D9;
+    --text-primary: #2D3436;
+    --text-secondary: #636E72;
+    --box-bg: #FFFFFF;
+    --box-shadow: rgba(0, 0, 0, 0.08);
+    --box-shadow-hover: rgba(0, 0, 0, 0.15);
+    --button-bg: #F5F5F5;
+    --button-border: #E0E0E0;
+    
+    /* Accent Colors for Buttons */
+    --accent-1: #FFD7BA;
+    --accent-2: #BFDBFE;
+    --accent-3: #FED7AA;
+    --accent-4: #FFC9DD;
+    --accent-5: #FECACA;
+    --accent-6: #D1FAE5;
+    
+    /* Slider Controls */
+    --slider-overlay: rgba(0, 0, 0, 0.5);
+    --slider-control-bg: rgba(255, 255, 255, 0.9);
+    --slider-control-hover: rgba(255, 255, 255, 1);
 }
 
+/* Dark Mode Theme Variables */
 [data-theme="dark"] {
-	/* Dark Mode - Muted, Professional */
-	--bg-gradient-start: #1e293b;
-	--bg-gradient-end: #0f172a;
-	--text-primary: #e2e8f0;
-	--text-secondary: #94a3b8;
-	--box-bg: #334155;
-	--box-shadow: rgba(0, 0, 0, 0.3);
-	--box-shadow-hover: rgba(0, 0, 0, 0.5);
-	--button-bg: #475569;
-	--button-border: #64748b;
-
-	/* Muted Accent Colors for Dark Mode */
-	--accent-1: #92400e;
-	--accent-2: #1e3a8a;
-	--accent-3: #92400e;
-	--accent-4: #831843;
-	--accent-5: #7f1d1d;
-	--accent-6: #065f46;
+    --bg-gradient-start: #1E293B;
+    --bg-gradient-end: #0F172A;
+    --text-primary: #E2E8F0;
+    --text-secondary: #94A3B8;
+    --box-bg: #334155;
+    --box-shadow: rgba(0, 0, 0, 0.3);
+    --box-shadow-hover: rgba(0, 0, 0, 0.5);
+    --button-bg: #475569;
+    --button-border: #64748B;
+    
+    /* Dark Mode Accents */
+    --accent-1: #92400E;
+    --accent-2: #1E3A8A;
+    --accent-3: #92400E;
+    --accent-4: #831843;
+    --accent-5: #7F1D1D;
+    --accent-6: #065F46;
+    
+    /* Dark Mode Slider Controls */
+    --slider-overlay: rgba(0, 0, 0, 0.7);
+    --slider-control-bg: rgba(51, 65, 85, 0.9);
+    --slider-control-hover: rgba(51, 65, 85, 1);
 }
 
 html {
-	scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-	font-family: "Nunito", sans-serif;
-	background: linear-gradient(
-		135deg,
-		var(--bg-gradient-start) 0%,
-		var(--bg-gradient-end) 100%
-	);
-	min-height: 100vh;
-	color: var(--text-primary);
-	overflow-x: hidden;
-	transition: background 0.5s ease;
-	/* Background image placeholder - replace with your image */
-	background-attachment: fixed;
-	background-size: cover;
-	background-position: center;
+    font-family: 'Nunito', sans-serif;
+    background-image: url(images/background.jpeg);
+    /* background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%); */
+    min-height: 100vh;
+    color: var(--text-primary);
+    overflow-x: hidden;
+    transition: background 0.5s ease, color 0.3s ease;
+    background-attachment: fixed;
 }
 
 /* ========================================
-   THEME TOGGLE BUTTON
+   3. THEME TOGGLE BUTTON
    ======================================== */
 .theme-toggle {
-	position: fixed;
-	top: 20px;
-	right: 20px;
-	width: 60px;
-	height: 60px;
-	border-radius: 50%;
-	border: none;
-	background: var(--box-bg);
-	box-shadow: 0 4px 15px var(--box-shadow);
-	cursor: pointer;
-	z-index: 1000;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	font-size: 1.5rem;
-	transition: all 0.3s ease;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background: var(--box-bg);
+    box-shadow: 0 4px 15px var(--box-shadow);
+    cursor: pointer;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
 }
 
 .theme-toggle:hover {
-	transform: scale(1.1) rotate(15deg);
-	box-shadow: 0 6px 20px var(--box-shadow-hover);
+    transform: scale(1.1) rotate(15deg);
+    box-shadow: 0 6px 20px var(--box-shadow-hover);
 }
 
 .theme-toggle .moon {
-	display: none;
+    display: none;
 }
 
 [data-theme="dark"] .theme-toggle .sun {
-	display: none;
+    display: none;
 }
 
 [data-theme="dark"] .theme-toggle .moon {
-	display: block;
+    display: block;
 }
 
 /* ========================================
-   CONTAINER & LAYOUT
+   4. CONTAINER & LAYOUT
    ======================================== */
 .container {
-	max-width: 1200px;
-	margin: 0 auto;
-	padding: 40px 20px;
-	min-height: 100vh;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    min-height: 100vh;
 }
 
 /* ========================================
-   TITLE BOX
+   5. TITLE BOX
    ======================================== */
 .title-box {
-	background: var(--box-bg);
-	border-radius: 20px;
-	padding: 30px 40px;
-	text-align: center;
-	box-shadow: 0 4px 20px var(--box-shadow);
-	margin-bottom: 30px;
-	animation: fadeInDown 0.6s ease;
+    background: var(--box-bg);
+    border-radius: 20px;
+    padding: 30px 40px;
+    text-align: center;
+    box-shadow: 0 4px 20px var(--box-shadow);
+    margin-bottom: 30px;
+    animation: fadeInDown 0.6s ease;
 }
 
 .main-title {
-	font-size: 2.5rem;
-	font-weight: 800;
-	color: var(--text-primary);
-	margin-bottom: 8px;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 8px;
 }
 
 .main-subtitle {
-	font-size: 1.1rem;
-	font-weight: 600;
-	color: var(--text-secondary);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
 }
 
 /* ========================================
-   MAIN IMAGE BOX (16:9 Aspect Ratio)
+   6. IMAGE SLIDER CONTAINER (16:9 Ratio)
    ======================================== */
 .image-box {
-	background: var(--box-bg);
-	border-radius: 20px;
-	overflow: hidden;
-	box-shadow: 0 4px 20px var(--box-shadow);
-	margin-bottom: 30px;
-	animation: fadeInUp 0.6s ease 0.2s backwards;
+    background: var(--box-bg);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px var(--box-shadow);
+    margin-bottom: 30px;
+    animation: fadeInUp 0.6s ease 0.2s backwards;
 }
 
-.image-content {
-	position: relative;
-	width: 100%;
-	padding-bottom: 56.25%; /* 16:9 aspect ratio */
-}
-
-.image-placeholder {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	background: linear-gradient(
-		135deg,
-		var(--accent-1) 0%,
-		var(--accent-3) 100%
-	);
-	/* Replace this with your image */
-	background-image: url("images/hero-image.jpg");
-	background-size: cover;
-	background-position: center;
-}
-
-.placeholder-icon {
-	font-size: 5rem;
-	margin-bottom: 15px;
-	opacity: 0.7;
-}
-
-.placeholder-text {
-	font-size: 1.2rem;
-	font-weight: 600;
-	color: var(--text-secondary);
-	opacity: 0.8;
+.slider-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    overflow: hidden;
 }
 
 /* ========================================
-   BUTTONS GRID
+   7. SLIDER WRAPPER & SLIDES
+   ======================================== */
+.slider-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide-position {
+    background-position: 0 -2000px;
+}
+
+.slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Slide Content Overlay */
+/* .slide-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--slider-overlay);
+    padding: 30px;
+    color: white;
+    transform: translateY(0);
+    transition: transform 0.5s ease;
+}
+
+.slide-title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.slide-description {
+    font-size: 1.1rem;
+    font-weight: 600;
+    opacity: 0.95;
+} */
+
+/* ========================================
+   8. SLIDER NAVIGATION BUTTONS
+   ======================================== */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--slider-control-bg);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.slider-btn:hover {
+    background: var(--slider-control-hover);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.prev-btn {
+    left: 20px;
+}
+
+.next-btn {
+    right: 20px;
+}
+
+.slider-btn svg {
+    color: var(--text-primary);
+}
+
+/* ========================================
+   9. SLIDER INDICATOR DOTS
+   ======================================== */
+.slider-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid var(--button-bg);
+    background: transparent;
+    /* background: var(--button-bg); */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.indicator:hover {
+    /* background: rgba(255, 255, 255, 0.5); */
+    background: var(--button-bg);
+    transform: scale(1.2);
+}
+
+.indicator.active {
+    /* background: white; */
+    background: var(--button-bg);
+    width: 30px;
+    border-radius: 6px;
+}
+
+/* ========================================
+   10. BUTTONS GRID
    ======================================== */
 .buttons-grid {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	gap: 20px;
-	animation: fadeInUp 0.6s ease 0.4s backwards;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    animation: fadeInUp 0.6s ease 0.4s backwards;
 }
 
 /* ========================================
-   NASI GORENG BUTTONS
+   11. NASI GORENG BUTTONS
    ======================================== */
 .nasi-goreng-button {
-	background: var(--button-bg);
-	border: 2px solid var(--button-border);
-	border-radius: 20px;
-	padding: 30px 20px;
-	text-decoration: none;
-	color: var(--text-primary);
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
-	box-shadow: 0 4px 15px var(--box-shadow);
-	cursor: pointer;
-	min-height: 160px;
-
-	/* Smooth hover animation */
-	transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    background: var(--button-bg);
+    border: 2px solid var(--button-border);
+    border-radius: 20px;
+    padding: 30px 20px;
+    text-decoration: none;
+    color: var(--text-primary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 4px 15px var(--box-shadow);
+    cursor: pointer;
+    min-height: 160px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 
 .nasi-goreng-button:hover {
-	transform: scale(1.1);
-	box-shadow: 0 8px 25px var(--box-shadow-hover);
-	background: var(--box-bg);
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px var(--box-shadow-hover);
+    background: var(--box-bg);
 }
 
-/* Individual button accent colors (subtle) */
-.kambing-btn {
-	border-color: var(--accent-1);
-}
-.kambing-btn:hover {
-	background: var(--accent-1);
-}
+/* Individual Button Accent Colors */
+.kambing-btn { border-color: var(--accent-1); }
+.kambing-btn:hover { background: var(--accent-1); }
 
-.seafood-btn {
-	border-color: var(--accent-2);
-}
-.seafood-btn:hover {
-	background: var(--accent-2);
-}
+.seafood-btn { border-color: var(--accent-2); }
+.seafood-btn:hover { background: var(--accent-2); }
 
-.jawa-btn {
-	border-color: var(--accent-3);
-}
-.jawa-btn:hover {
-	background: var(--accent-3);
-}
+.jawa-btn { border-color: var(--accent-3); }
+.jawa-btn:hover { background: var(--accent-3); }
 
-.ayam-btn {
-	border-color: var(--accent-4);
-}
-.ayam-btn:hover {
-	background: var(--accent-4);
-}
+.ayam-btn { border-color: var(--accent-4); }
+.ayam-btn:hover { background: var(--accent-4); }
 
-.sapi-btn {
-	border-color: var(--accent-5);
-}
-.sapi-btn:hover {
-	background: var(--accent-5);
-}
+.sapi-btn { border-color: var(--accent-5); }
+.sapi-btn:hover { background: var(--accent-5); }
 
-.pete-btn {
-	border-color: var(--accent-6);
-}
-.pete-btn:hover {
-	background: var(--accent-6);
-}
+.pete-btn { border-color: var(--accent-6); }
+.pete-btn:hover { background: var(--accent-6); }
 
 /* ========================================
-   BUTTON ICONS
+   12. BUTTON ICONS
    ======================================== */
 .button-icon {
-	width: 60px;
-	height: 60px;
-	border-radius: 50%;
-	margin-bottom: 15px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	font-size: 2rem;
-	background: var(--box-bg);
-	box-shadow: 0 2px 10px var(--box-shadow);
-	transition: transform 0.3s ease;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--box-bg);
+    box-shadow: 0 2px 10px var(--box-shadow);
+    transition: transform 0.3s ease;
+    background-size: cover;
+    background-position: center;
 }
 
 .nasi-goreng-button:hover .button-icon {
-	transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+/* Button Icon Images */
+.kambing-icon { background-image: url('images/kambing.jpeg'); }
+.seafood-icon { background-image: url('images/seafood.jpg'); }
+.jawa-icon { background-image: url('images/jawa.jpg'); }
+.ayam-icon { background-image: url('images/ayam.jpg'); }
+.sapi-icon { background-image: url('images/sapi.jpeg'); }
+.pete-icon { background-image: url('images/pete.jpg'); }
+
+.button-label {
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.3;
 }
 
 /* ========================================
-   CIRCLE IMAGES (Placeholder)
+   13. DETAIL PAGE STYLES
    ======================================== */
+.detail-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    animation: fadeInUp 0.6s ease;
+}
+
+.detail-card {
+    background: var(--box-bg);
+    border-radius: 30px;
+    padding: 50px;
+    box-shadow: 0 10px 40px var(--box-shadow);
+    text-align: center;
+}
+
+.detail-image {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 25px var(--box-shadow);
+}
+
 .circle-image {
     width: 100%;
     height: 100%;
     border-radius: 50%;
     background-size: cover;
     background-position: center;
-    margin-bottom: 8px;
-    border: 3px solid rgba(255, 255, 255, 0.5);
-    background-color: rgba(255, 255, 255, 0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-}
-
-/* Icon placeholders - replace with your images */
-.kambing-icon {
-	background-image: url("images/kambing.jpeg");
-	background-size: cover;
-	background-position: center;
-}
-
-.seafood-icon {
-	background-image: url("images/seafood.jpg");
-	background-size: cover;
-	background-position: center;
-}
-
-.jawa-icon {
-	background-image: url("images/jawa.jpg");
-	background-size: cover;
-	background-position: center;
-}
-
-.ayam-icon {
-	background-image: url("images/ayam.jpg");
-	background-size: cover;
-	background-position: center;
-}
-
-.sapi-icon {
-	background-image: url("images/sapi.jpeg");
-	background-size: cover;
-	background-position: center;
-}
-
-.pete-icon {
-	background-image: url("images/pete.jpg");
-	background-size: cover;
-	background-position: center;
-}
-
-/* Emoji fallback if images don't exist */
-/* .kambing-icon::before {
-	content: "🐐";
-}
-.seafood-icon::before {
-	content: "🦐";
-}
-.jawa-icon::before {
-	content: "🍛";
-}
-.ayam-icon::before {
-	content: "🍗";
-}
-.sapi-icon::before {
-	content: "🥩";
-}
-.pete-icon::before {
-	content: "🌱";
-} */
-
-/* ========================================
-   BUTTON LABELS
-   ======================================== */
-.button-label {
-	font-size: 1.1rem;
-	font-weight: 700;
-	line-height: 1.3;
-}
-
-/* ========================================
-   DETAIL PAGE STYLES (Unchanged)
-   ======================================== */
-.detail-container {
-	max-width: 800px;
-	margin: 0 auto;
-	padding: 60px 20px;
-	animation: fadeInUp 0.6s ease;
-}
-
-.detail-card {
-	background: var(--box-bg);
-	border-radius: 30px;
-	padding: 50px;
-	box-shadow: 0 10px 40px var(--box-shadow);
-	text-align: center;
-}
-
-.detail-image {
-	width: 150px;
-	height: 150px;
-	margin: 0 auto 30px;
-	border-radius: 50%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	font-size: 4rem;
-	box-shadow: 0 6px 25px var(--box-shadow);
 }
 
 .detail-title {
-	font-size: 2.5rem;
-	font-weight: 800;
-	color: var(--text-primary);
-	margin-bottom: 30px;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 30px;
 }
 
 .detail-section {
-	text-align: left;
-	margin-bottom: 30px;
+    text-align: left;
+    margin-bottom: 30px;
 }
 
 .detail-section h3 {
-	font-size: 1.3rem;
-	font-weight: 700;
-	color: var(--text-primary);
-	margin-bottom: 12px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 12px;
 }
 
 .detail-section p {
-	font-size: 1rem;
-	line-height: 1.8;
-	color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
 }
 
 .back-button {
-	display: inline-block;
-	padding: 15px 40px;
-	background: var(--button-bg);
-	border: 2px solid var(--button-border);
-	color: var(--text-primary);
-	text-decoration: none;
-	border-radius: 50px;
-	font-weight: 700;
-	font-size: 1rem;
-	box-shadow: 0 4px 15px var(--box-shadow);
-	transition: all 0.3s ease;
-	margin-top: 20px;
+    display: inline-block;
+    padding: 15px 40px;
+    background: var(--button-bg);
+    border: 2px solid var(--button-border);
+    color: var(--text-primary);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1rem;
+    box-shadow: 0 4px 15px var(--box-shadow);
+    transition: all 0.3s ease;
+    margin-top: 20px;
 }
 
 .back-button:hover {
-	transform: translateY(-3px);
-	box-shadow: 0 6px 20px var(--box-shadow-hover);
-	background: var(--box-bg);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px var(--box-shadow-hover);
+    background: var(--box-bg);
 }
 
 /* ========================================
-   ANIMATIONS
+   14. ANIMATIONS
    ======================================== */
 @keyframes fadeInDown {
-	from {
-		opacity: 0;
-		transform: translateY(-30px);
-	}
-	to {
-		opacity: 1;
-		transform: translateY(0);
-	}
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes fadeInUp {
-	from {
-		opacity: 0;
-		transform: translateY(30px);
-	}
-	to {
-		opacity: 1;
-		transform: translateY(0);
-	}
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* ========================================
-   RESPONSIVE DESIGN
+   15. RESPONSIVE DESIGN
    ======================================== */
 
-/* Tablet */
+/* Tablet (1024px and below) */
 @media (max-width: 1024px) {
-	.container {
-		padding: 30px 15px;
-	}
-
-	.main-title {
-		font-size: 2rem;
-	}
-
-	.main-subtitle {
-		font-size: 1rem;
-	}
-
-	.buttons-grid {
-		gap: 15px;
-	}
-
-	.nasi-goreng-button {
-		padding: 25px 15px;
-		min-height: 140px;
-	}
+    .container {
+        padding: 30px 15px;
+    }
+    
+    .main-title {
+        font-size: 2rem;
+    }
+    
+    .slide-title {
+        font-size: 1.5rem;
+    }
+    
+    .slide-description {
+        font-size: 1rem;
+    }
 }
 
-/* Mobile - Stack into 1 column (6 rows) */
+/* Mobile (767px and below) - Stack to 1 column */
 @media (max-width: 767px) {
-	.theme-toggle {
-		width: 50px;
-		height: 50px;
-		top: 15px;
-		right: 15px;
-		font-size: 1.2rem;
-	}
-
-	.container {
-		padding: 20px 15px;
-	}
-
-	.title-box {
-		padding: 20px 25px;
-		margin-bottom: 20px;
-		border-radius: 15px;
-	}
-
-	.main-title {
-		font-size: 1.5rem;
-	}
-
-	.main-subtitle {
-		font-size: 0.9rem;
-	}
-
-	.image-box {
-		margin-bottom: 20px;
-		border-radius: 15px;
-	}
-
-	.placeholder-icon {
-		font-size: 3rem;
-	}
-
-	.placeholder-text {
-		font-size: 1rem;
-		padding: 0 20px;
-	}
-
-	/* CRITICAL: Stack buttons into 1 column */
-	.buttons-grid {
-		grid-template-columns: 1fr;
-		gap: 15px;
-	}
-
-	.nasi-goreng-button {
-		padding: 25px 20px;
-		min-height: 120px;
-	}
-
-	.button-icon {
-		width: 50px;
-		height: 50px;
-		font-size: 1.5rem;
-		margin-bottom: 10px;
-	}
-
-	.button-label {
-		font-size: 1rem;
-	}
-
-	/* Detail page responsive */
-	.detail-card {
-		padding: 30px 20px;
-		border-radius: 20px;
-	}
-
-	.detail-title {
-		font-size: 1.8rem;
-	}
-
-	.detail-image {
-		width: 120px;
-		height: 120px;
-		font-size: 3rem;
-	}
-
-	.back-button {
-		padding: 12px 30px;
-		font-size: 0.9rem;
-	}
+    .theme-toggle {
+        width: 50px;
+        height: 50px;
+        top: 15px;
+        right: 15px;
+        font-size: 1.2rem;
+    }
+    
+    .container {
+        padding: 20px 15px;
+    }
+    
+    .title-box {
+        padding: 20px 25px;
+        margin-bottom: 20px;
+        border-radius: 15px;
+    }
+    
+    .main-title {
+        font-size: 1.5rem;
+    }
+    
+    .main-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .image-box {
+        margin-bottom: 20px;
+        border-radius: 15px;
+    }
+    
+    /* Slider controls for mobile */
+    .slider-btn {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .prev-btn {
+        left: 10px;
+    }
+    
+    .next-btn {
+        right: 10px;
+    }
+    
+    .slide-content {
+        padding: 20px 15px;
+    }
+    
+    .slide-title {
+        font-size: 1.2rem;
+    }
+    
+    .slide-description {
+        font-size: 0.9rem;
+    }
+    
+    .indicator {
+        width: 10px;
+        height: 10px;
+    }
+    
+    .indicator.active {
+        width: 24px;
+    }
+    
+    /* CRITICAL: Stack buttons into 1 column */
+    .buttons-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .nasi-goreng-button {
+        padding: 25px 20px;
+        min-height: 120px;
+    }
+    
+    .button-icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 10px;
+    }
+    
+    .button-label {
+        font-size: 1rem;
+    }
+    
+    /* Detail page mobile */
+    .detail-card {
+        padding: 30px 20px;
+        border-radius: 20px;
+    }
+    
+    .detail-title {
+        font-size: 1.8rem;
+    }
+    
+    .detail-image {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .back-button {
+        padding: 12px 30px;
+        font-size: 0.9rem;
+    }
 }
 
-/* Extra small mobile */
+/* Extra small mobile (360px and below) */
 @media (max-width: 360px) {
-	.main-title {
-		font-size: 1.3rem;
-	}
-
-	.nasi-goreng-button {
-		min-height: 100px;
-		padding: 20px 15px;
-	}
-
-	.button-icon {
-		width: 45px;
-		height: 45px;
-	}
-
-	.button-label {
-		font-size: 0.95rem;
-	}
+    .main-title {
+        font-size: 1.3rem;
+    }
+    
+    .nasi-goreng-button {
+        min-height: 100px;
+        padding: 20px 15px;
+    }
+    
+    .button-icon {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .button-label {
+        font-size: 0.95rem;
+    }
+    
+    .slide-title {
+        font-size: 1rem;
+    }
+    
+    .slide-description {
+        font-size: 0.85rem;
+    }
 }

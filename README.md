@@ -1,94 +1,65 @@
-# 🍚 Ragam Nasi Goreng Indonesia - Infografik Interaktif (V2.0)
-
-> Interactive infographic website with rectangular layout showcasing varieties of Indonesian fried rice
-
-![Version](https://img.shields.io/badge/version-2.0.0-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
-![Status](https://img.shields.io/badge/status-ready-brightgreen)
-
-## 📋 Table of Contents
-
-- [What's New in V2.0](#-whats-new-in-v20)
-- [Overview](#-overview)
-- [Features](#-features)
-- [Project Structure](#-project-structure)
-- [Setup & Installation](#-setup--installation)
-- [Customization Guide](#-customization-guide)
-- [Responsive Behavior](#-responsive-behavior)
-- [Technologies Used](#-technologies-used)
-- [Browser Compatibility](#-browser-compatibility)
+# 🍚 Ragam Nasi Goreng Indonesia - Version 2.1
+## Fixed & Optimized Edition
 
 ---
 
-## 🆕 What's New in V2.0
+## 📋 What Was Fixed
 
-### Layout Changes
-- ✅ **Rectangular design** instead of circular layout
-- ✅ **Title box** at the top with heading and subtitle
-- ✅ **16:9 image box** for hero image (child with spoon and fork)
-- ✅ **2×3 button grid** on desktop (6 rectangular buttons)
-- ✅ **1×6 button stack** on mobile (automatically responsive)
+### 🐛 Critical Bugs Resolved
 
-### Design Updates
-- ✅ **New simple color palette** (no neon, clean and professional)
-- ✅ **Smooth hover animation** - buttons scale to 1.1× with ease transition
-- ✅ **Background image support** (gradient placeholder included)
-- ✅ **Muted accent colors** for each button type
-- ✅ **Maintained dark/light mode** toggle
+#### 1. **Slider Functionality** ✅
+**Problem:**
+- Slider images were not changing automatically
+- Buttons didn't work properly
+- Content was about animals, not Indonesian food
+- No indicator dots
+- Transitions were choppy
 
-### Technical Improvements
-- ✅ **Better mobile experience** with automatic stacking
-- ✅ **Improved touch interactions** for mobile devices
-- ✅ **Optimized animations** for performance
-- ✅ **Same file structure** - easy to upgrade
+**Solution:**
+- Implemented proper fade transition system
+- Added auto-play with 5-second intervals
+- Replaced animal content with 6 Nasi Goreng varieties
+- Added working indicator dots at bottom
+- Smooth 1-second fade transitions
+- Pause on hover for better UX
+- Touch swipe support for mobile
 
----
+#### 2. **Dark Mode** ✅
+**Problem:**
+- Theme toggle wasn't affecting slider elements
+- Some text remained unreadable in dark mode
+- Theme persistence was unreliable
 
-## 🎯 Overview
+**Solution:**
+- Extended CSS variables to cover all elements including slider
+- Fixed slider overlay colors for dark mode
+- Ensured localStorage correctly saves and loads theme
+- All text now properly contrasts in both modes
 
-**Ragam Nasi Goreng Indonesia V2.0** is an interactive, educational website that showcases six popular varieties of Indonesian fried rice through a clean, modern rectangular layout. Designed for teenagers and young audiences with:
+#### 3. **Code Organization** ✅
+**Problem:**
+- Mixed content and styling
+- Redundant CSS rules
+- Confusing class names
+- No code comments
 
-- 🎨 Simple, professional design with muted colors
-- 🌓 Dark/Light mode toggle
-- 📱 Mobile-first responsive (auto-stacks on mobile)
-- ✨ Smooth hover and transition animations
-- 🖼️ 16:9 hero image area
-- 🚀 Optimized for GitHub Pages
-
----
-
-## ✨ Features
-
-### Visual Design
-- **Title Box**: Clean white box with title and subtitle
-- **Hero Image Area**: 16:9 aspect ratio image container
-- **Button Grid**: 2 columns × 3 rows on desktop
-- **Hover Effect**: Smooth scale(1.1) transformation
-- **Color Palette**: Simple, muted, professional tones
-
-### Layout Behavior
-- **Desktop/Tablet (≥768px)**: 2-column grid layout
-- **Mobile (<768px)**: Automatically stacks into 1 column
-- **Smooth Transitions**: All interactions are fluid
-- **Responsive Images**: Maintains aspect ratio on all screens
-
-### Interactive Features
-- 🌓 **Theme Toggle**: Persistent light/dark mode
-- 🎬 **Page Transitions**: Fade in/out when navigating
-- 🖱️ **Hover Effects**: Scale up + shadow enhancement
-- 📱 **Touch Optimized**: Special interactions for mobile
-- ⌨️ **Keyboard Navigation**: Tab and Enter support
+**Solution:**
+- Complete file separation (HTML structure, CSS styling, JS logic)
+- Removed all duplicate code
+- Clear, semantic class naming
+- Comprehensive comments throughout all files
+- Organized CSS into numbered sections
 
 ---
 
-## 📁 Project Structure
+## 📁 File Structure
 
 ```
 ragam-nasi-goreng-indonesia/
 │
-├── index.html              # Main page (updated rectangular layout)
-├── style.css               # Complete styling (new color palette)
-├── script.js               # Interactive logic (minimal changes)
+├── index.html              # Main page structure (cleaned)
+├── style.css               # Complete styling (organized & commented)
+├── script.js               # All functionality (well-documented)
 │
 ├── pages/                  # Detail pages (unchanged)
 │   ├── nasgor_kambing.html
@@ -99,525 +70,544 @@ ragam-nasi-goreng-indonesia/
 │   └── nasgor_pete.html
 │
 ├── images/                 # Image assets
-│   ├── hero-image.jpg      # Main 16:9 hero image (NEW)
-│   ├── kambing.jpeg         # Button icons
-│   ├── seafood.jpg
-│   ├── jawa.jpg
-│   ├── ayam.jpg
-│   ├── sapi.jpeg
-│   └── pete.jpg
+│   ├── kambing.jpeg        # Slider & button image
+│   ├── seafood.jpg         # Slider & button image
+│   ├── jawa.jpg            # Slider & button image
+│   ├── ayam.jpg            # Slider & button image
+│   ├── sapi.jpeg           # Slider & button image
+│   └── pete.jpg            # Slider & button image
 │
-└── README.md              # This file
+└── README.md        # This documentation file
 ```
 
 ---
 
-## 🚀 Setup & Installation
+## 🎬 How the Slider Works
 
-### Quick Start
+### Technical Implementation
 
-1. **Download/Clone** the repository
-2. **Open** `index.html` in any modern browser
-3. **Works immediately** - no build process needed!
-
-### Local Development
-
-```bash
-# Clone the repository
-git clone https://github.com/yourusername/ragam-nasi-goreng-indonesia.git
-
-# Navigate to folder
-cd ragam-nasi-goreng-indonesia
-
-# Start local server (optional)
-python -m http.server 8000
-# OR
-npx http-server
-
-# Open browser to http://localhost:8000
+```javascript
+// Auto-play configuration
+const SLIDER_CONFIG = {
+    autoPlayInterval: 3000,  // Changes slide every 3 seconds
+    transitionDuration: 1000 // Fade animation takes 1 second
+};
 ```
 
-### GitHub Pages Deployment
+### Slider Features
 
+1. **Auto-Play**: Automatically cycles through all 6 slides
+2. **Manual Navigation**: 
+   - Click ← → buttons to navigate
+   - Click indicator dots to jump to specific slide
+   - Keyboard arrows (← →) also work
+   - Swipe left/right on mobile
+3. **Pause on Hover**: Auto-play pauses when you hover over the slider
+4. **Smooth Transitions**: 1-second fade effect between slides
+5. **Responsive**: Adjusts for all screen sizes
+
+### Slider Content Structure
+
+Each slide contains:
+- **Background Image**: Full-size fried rice photo
+- **Title Overlay**: Name of the dish (e.g., "Nasi Goreng Kambing")
+- **Description**: Brief description of the dish
+
+---
+
+## 🎨 How to Modify the Slider
+
+### 1. Change Slider Images
+
+**Option A: Replace existing images**
 ```bash
-# Initialize git
-git init
-git add .
-git commit -m "V2.0: Rectangular layout with auto-stacking mobile"
+# Simply replace files in /images folder
+# Keep the same filenames:
+images/kambing.jpeg
+images/seafood.jpg
+images/jawa.jpg
+images/ayam.jpg
+images/sapi.jpeg
+images/pete.jpg
+```
 
-# Push to GitHub
-git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/ragam-nasi-goreng-indonesia.git
-git push -u origin main
+**Option B: Add new slide**
 
-# Enable GitHub Pages
-# Go to: Repository Settings → Pages → Source: main branch → Save
+**Step 1:** Add HTML slide in `index.html`
+```html
+<!-- After the last slide, add: -->
+<div class="slide">
+    <img src="images/your-new-dish.jpg" alt="New Dish Name">
+    <div class="slide-content">
+        <h2 class="slide-title">New Dish Name</h2>
+        <p class="slide-description">Description of the dish</p>
+    </div>
+</div>
+```
 
-# Your site will be live at:
-# https://YOUR_USERNAME.github.io/ragam-nasi-goreng-indonesia/
+**Step 2:** Add indicator dot in `index.html`
+```html
+<!-- In .slider-indicators, add: -->
+<button class="indicator" data-slide="6" aria-label="Go to slide 7"></button>
+```
+
+**Step 3:** Update JavaScript in `script.js`
+```javascript
+// No changes needed! The slider automatically detects all slides.
+```
+
+### 2. Change Slider Speed
+
+**In `script.js`, modify:**
+```javascript
+const SLIDER_CONFIG = {
+    autoPlayInterval: 5000,  // Change to 3000 for 3 seconds, 7000 for 7 seconds
+    transitionDuration: 1000 // Change to 500 for faster fade, 1500 for slower
+};
+```
+
+### 3. Change Slide Text Content
+
+**Edit in `index.html`:**
+```html
+<div class="slide-content">
+    <h2 class="slide-title">Your Custom Title</h2>
+    <p class="slide-description">Your custom description here</p>
+</div>
+```
+
+### 4. Disable Auto-Play
+
+**In `script.js`, comment out:**
+```javascript
+// Start auto-play when page loads
+// if (slides.length > 0) {
+//     startAutoPlay();
+// }
 ```
 
 ---
 
-## 🎨 Customization Guide
+## 🌓 How Dark Mode Works
 
-### 1. Adding Your Hero Image
+### Implementation
 
-**Replace the placeholder:**
+Dark mode uses CSS custom properties (variables) to switch colors:
 
-```css
-/* In style.css, find .image-placeholder */
-.image-placeholder {
-    background-image: url('../images/hero-image.jpg');
-    /* Or use the body background approach */
-}
-```
-
-**Image specifications:**
-- **Aspect Ratio**: 16:9 (1920×1080px recommended)
-- **Format**: JPG or JPEG
-- **Size**: < 500 KB for fast loading
-- **Subject**: Child holding spoon and fork
-- **Style**: Bright, friendly, high quality
-
-### 2. Changing Colors
-
-**Light Mode:**
 ```css
 :root {
-    --bg-gradient-start: #FFF5E4;  /* Cream */
-    --bg-gradient-end: #FFE5D9;    /* Light Peach */
-    --button-bg: #F5F5F5;          /* Light Gray */
-    /* Edit these as needed */
+    /* Light mode colors */
+    --bg-gradient-start: #FFF5E4;
+    --text-primary: #2D3436;
+}
+
+[data-theme="dark"] {
+    /* Dark mode colors */
+    --bg-gradient-start: #1E293B;
+    --text-primary: #E2E8F0;
 }
 ```
 
-**Dark Mode:**
+### Persistence
+
+Theme preference is saved in browser's localStorage:
+
+```javascript
+// Save theme
+localStorage.setItem('theme', 'dark');
+
+// Load theme on page load
+const savedTheme = localStorage.getItem('theme') || 'light';
+```
+
+### Customizing Dark Mode Colors
+
+**In `style.css`, edit the `[data-theme="dark"]` section:**
+
 ```css
 [data-theme="dark"] {
-    --bg-gradient-start: #1E293B;  /* Navy */
-    --bg-gradient-end: #0F172A;    /* Darker Navy */
-    --button-bg: #475569;          /* Medium Gray */
-    /* Edit these as needed */
+    --bg-gradient-start: #YOUR_COLOR;  /* Background start */
+    --bg-gradient-end: #YOUR_COLOR;    /* Background end */
+    --text-primary: #YOUR_COLOR;       /* Main text */
+    --box-bg: #YOUR_COLOR;             /* Box backgrounds */
+    /* etc. */
 }
 ```
-
-### 3. Adjusting Hover Animation Speed
-
-```css
-/* In style.css, find .nasi-goreng-button */
-.nasi-goreng-button {
-    transition: transform 0.3s ease; /* Change 0.3s to 0.2s for faster */
-}
-
-.nasi-goreng-button:hover {
-    transform: scale(1.1); /* Change 1.1 to 1.15 for more zoom */
-}
-```
-
-### 4. Modifying Button Layout
-
-**Change from 2 columns to 3 columns (desktop):**
-```css
-.buttons-grid {
-    grid-template-columns: repeat(3, 1fr); /* Change 2 to 3 */
-}
-```
-
-**Adjust gap between buttons:**
-```css
-.buttons-grid {
-    gap: 20px; /* Change to 15px or 25px */
-}
-```
-
-### 5. Adding Background Image to Body
-
-**Option 1: Using your own image**
-```css
-body {
-    background-image: url('../images/background.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-}
-```
-
-**Option 2: Using a pattern**
-```css
-body {
-    background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/food.png');
-    background-repeat: repeat;
-}
-```
-
-### 6. Editing Content
-
-**Title and Subtitle:**
-```html
-<!-- In index.html -->
-<h1 class="main-title">Your Custom Title Here</h1>
-<p class="main-subtitle">Your custom subtitle</p>
-```
-
-**Button Labels:**
-```html
-<!-- In index.html -->
-<span class="button-label">Your Custom Label</span>
-```
-
-**Detail Pages:**
-- Open any file in `/pages` folder
-- Replace Lorem Ipsum with real content
-- Keep the HTML structure intact
 
 ---
 
 ## 📱 Responsive Behavior
 
-### Desktop Layout (≥768px)
+### Desktop (≥1024px)
+- Slider: Full 16:9 ratio with large controls
+- Buttons: 2 columns × 3 rows grid
+- Text: Large, readable sizes
 
-```
-┌─────────────────────────────────┐
-│     RAGAM NASI GORENG           │  ← Title Box
-└─────────────────────────────────┘
+### Tablet (768px - 1023px)
+- Slider: Maintained ratio, medium controls
+- Buttons: Still 2 columns
+- Text: Medium sizes
 
-┌─────────────────────────────────┐
-│                                 │
-│         HERO IMAGE              │  ← 16:9 Image
-│         (Child with utensils)   │
-└─────────────────────────────────┘
-
-┌──────────────┐  ┌──────────────┐
-│ Nasi Goreng  │  │ Nasi Goreng  │  ← Row 1
-│   Kambing    │  │   Ayam       │
-└──────────────┘  └──────────────┘
-
-┌──────────────┐  ┌──────────────┐
-│ Nasi Goreng  │  │ Nasi Goreng  │  ← Row 2
-│   Seafood    │  │   Sapi       │
-└──────────────┘  └──────────────┘
-
-┌──────────────┐  ┌──────────────┐
-│ Nasi Goreng  │  │ Nasi Goreng  │  ← Row 3
-│   Jawa       │  │   Pete       │
-└──────────────┘  └──────────────┘
-```
-
-### Mobile Layout (<768px)
-
-```
-┌─────────────────┐
-│ RAGAM NASI      │  ← Title Box (narrower)
-│ GORENG          │
-└─────────────────┘
-
-┌─────────────────┐
-│                 │
-│   HERO IMAGE    │  ← 16:9 Image (full width)
-│                 │
-└─────────────────┘
-
-┌─────────────────┐
-│ Nasi Goreng     │  ← Button 1
-│   Kambing       │
-└─────────────────┘
-
-┌─────────────────┐
-│ Nasi Goreng     │  ← Button 2
-│   Seafood       │
-└─────────────────┘
-
-┌─────────────────┐
-│ Nasi Goreng     │  ← Button 3
-│   Jawa          │
-└─────────────────┘
-
-┌─────────────────┐
-│ Nasi Goreng     │  ← Button 4
-│   Ayam          │
-└─────────────────┘
-
-┌─────────────────┐
-│ Nasi Goreng     │  ← Button 5
-│   Sapi          │
-└─────────────────┘
-
-┌─────────────────┐
-│ Nasi Goreng     │  ← Button 6
-│   Pete          │
-└─────────────────┘
-```
-
-### Breakpoint Details
-
-| Screen Size | Layout | Columns | Gap |
-|-------------|--------|---------|-----|
-| ≥1024px | Desktop | 2 | 20px |
-| 768px - 1023px | Tablet | 2 | 15px |
-| <768px | Mobile | 1 | 15px |
-| <360px | Small Mobile | 1 | 15px (compact) |
+### Mobile (<768px)
+- Slider: Full width, smaller controls, touch swipe enabled
+- Buttons: **Automatically stacks to 1 column**
+- Text: Compact, optimized sizes
+- Touch interactions enabled
 
 ---
 
-## 🛠️ Technologies Used
+## 🎯 Code Organization
 
-| Technology | Purpose | Notes |
-|------------|---------|-------|
-| HTML5 | Structure | Semantic elements |
-| CSS3 | Styling & Animation | Grid, Flexbox, Variables |
-| JavaScript (Vanilla) | Interactivity | ES6+, no frameworks |
-| Google Fonts | Typography (Nunito) | Self-hosted option available |
-| localStorage API | Theme persistence | Browser-based storage |
+### HTML Structure (`index.html`)
 
-**No dependencies, no build tools, no frameworks!**
+```
+<body>
+  ├── Theme Toggle Button
+  └── Container
+      ├── Title Box
+      ├── Image Slider Box
+      │   ├── Slider Wrapper (6 Slides)
+      │   ├── Navigation Buttons
+      │   └── Indicator Dots
+      └── Buttons Grid (6 Buttons)
+</body>
+```
+
+### CSS Organization (`style.css`)
+
+```
+1. Global Styles & Reset
+2. CSS Variables (Theme Colors)
+3. Theme Toggle Button
+4. Container & Layout
+5. Title Box
+6. Image Slider Container
+7. Slider Wrapper & Slides
+8. Slider Navigation Buttons
+9. Slider Indicator Dots
+10. Buttons Grid
+11. Nasi Goreng Buttons
+12. Button Icons
+13. Detail Page Styles
+14. Animations
+15. Responsive Design
+```
+
+### JavaScript Modules (`script.js`)
+
+```
+1. Theme Toggle Functionality
+2. Image Slider Functionality
+3. Page Transition Effects
+4. Smooth Scroll for Anchor Links
+5. Mobile Touch Interactions
+6. Keyboard Navigation
+7. Performance Optimization
+8. Intersection Observer for Animations
+9. Console Welcome Message
+10. Cleanup on Page Unload
+```
 
 ---
 
-## 🌍 Browser Compatibility
+## 🔧 Common Customizations
 
-| Browser | Version | Status |
-|---------|---------|--------|
-| Chrome | 90+ | ✅ Fully Supported |
-| Firefox | 88+ | ✅ Fully Supported |
-| Safari | 14+ | ✅ Fully Supported |
-| Edge | 90+ | ✅ Fully Supported |
-| Opera | 76+ | ✅ Fully Supported |
-| Mobile Browsers | iOS 14+, Android 10+ | ✅ Optimized |
+### Change Animation Speed
 
-### Required Features
-- CSS Grid Layout
-- CSS Variables (Custom Properties)
-- CSS Transforms & Transitions
-- localStorage API
-- ES6 JavaScript
-
----
-
-## 🎯 Key Features Explained
-
-### 1. Auto-Stacking Mobile Layout
-
-**How it works:**
+**Hover effect on buttons:**
 ```css
-/* Desktop: 2 columns */
-.buttons-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+/* In style.css */
+.nasi-goreng-button {
+    transition: transform 0.3s ease; /* Change 0.3s to 0.2s for faster */
 }
+```
 
-/* Mobile: 1 column (automatic stacking) */
+**Page transitions:**
+```javascript
+// In script.js
+document.body.style.transition = 'opacity 0.5s ease'; // Change 0.5s
+```
+
+### Change Slider Overlay Opacity
+
+```css
+/* In style.css */
+.slide-content {
+    background: rgba(0, 0, 0, 0.5); /* Change 0.5 to 0.3 for lighter, 0.7 for darker */
+}
+```
+
+### Adjust Button Grid Columns
+
+```css
+/* In style.css */
+.buttons-grid {
+    grid-template-columns: repeat(2, 1fr); /* Change 2 to 3 for 3 columns */
+}
+```
+
+### Change Color Palette
+
+```css
+/* In style.css - :root section */
+--accent-1: #FFD7BA;  /* Button 1 color */
+--accent-2: #BFDBFE;  /* Button 2 color */
+/* Change to your preferred colors */
+```
+
+---
+
+## 🐛 Troubleshooting
+
+### Issue: Slider not auto-playing
+
+**Check:**
+1. Are images loading? (Open browser console for errors)
+2. Is JavaScript enabled?
+3. Check console for error messages
+
+**Fix:**
+```javascript
+// In browser console, type:
+console.log('Slides found:', document.querySelectorAll('.slide').length);
+// Should show 6 if all slides are present
+```
+
+### Issue: Dark mode not working
+
+**Check:**
+1. Is theme toggle button visible?
+2. Open browser console and type: `localStorage.getItem('theme')`
+3. Clear localStorage: `localStorage.clear()` then refresh
+
+**Fix:**
+```javascript
+// Force light mode
+localStorage.setItem('theme', 'light');
+location.reload();
+```
+
+### Issue: Slider images not showing
+
+**Check:**
+1. Are images in correct folder? (`/images/`)
+2. Are filenames correct? (case-sensitive!)
+3. Check browser console for 404 errors
+
+**Fix:**
+```html
+<!-- Update image paths in index.html if folder structure changed -->
+<img src="YOUR_PATH/kambing.jpeg" alt="...">
+```
+
+### Issue: Buttons not stacking on mobile
+
+**Check:**
+1. Is viewport meta tag present in HTML?
+2. Test in actual mobile device or Chrome DevTools
+
+**Fix:**
+```css
+/* Force mobile layout */
 @media (max-width: 767px) {
     .buttons-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
     }
 }
 ```
 
-**Benefits:**
-- ✅ No JavaScript needed
-- ✅ Automatic at breakpoint
-- ✅ Smooth transition
-- ✅ Better mobile UX
-
-### 2. Smooth Hover Animation
-
-**Implementation:**
-```css
-.nasi-goreng-button {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.nasi-goreng-button:hover {
-    transform: scale(1.1);
-    box-shadow: 0 8px 25px var(--box-shadow-hover);
-}
-```
-
-**Timing breakdown:**
-- **0.0s**: Normal state
-- **0.15s**: 50% of scale animation
-- **0.3s**: Full scale + shadow
-
-### 3. 16:9 Aspect Ratio Lock
-
-**CSS trick:**
-```css
-.image-content {
-    width: 100%;
-    padding-bottom: 56.25%; /* 9/16 = 0.5625 = 56.25% */
-}
-```
-
-**Why?** Maintains perfect 16:9 ratio on all screen sizes without JavaScript.
-
-### 4. Theme Persistence
-
-**Flow:**
-1. User toggles theme
-2. Saved to localStorage: `theme: 'dark'`
-3. Page reload → Check localStorage
-4. Apply saved theme automatically
-
 ---
 
-## 📊 Performance Metrics
+## ⚡ Performance Tips
 
-### Load Times (estimated)
-- **First Contentful Paint**: < 1.0s
-- **Time to Interactive**: < 1.5s
-- **Largest Contentful Paint**: < 2.0s (depends on images)
+### 1. Optimize Images
 
-### Lighthouse Scores (target)
-- **Performance**: 90+
-- **Accessibility**: 85+
-- **Best Practices**: 95+
-- **SEO**: 100
+```bash
+# Recommended image sizes:
+Slider images: 1920×1080px (16:9), < 200 KB
+Button icons: 200×200px, < 50 KB
 
----
+# Use online tools like:
+- TinyPNG.com
+- Squoosh.app
+```
 
-## 🔧 Troubleshooting
+### 2. Enable Browser Caching
 
-### Issue: Buttons don't stack on mobile
-
-**Solution:** Check viewport meta tag
 ```html
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Add to HTML <head> -->
+<meta http-equiv="Cache-Control" content="max-age=3600">
 ```
 
-### Issue: Hero image not showing
+### 3. Lazy Load Images (Optional)
 
-**Solution:** Check file path and format
-```css
-/* Correct path (from CSS file location) */
-background-image: url('../images/hero-image.jpg');
-
-/* Verify file exists at: */
-/* /images/hero-image.jpg */
-```
-
-### Issue: Hover animation too fast/slow
-
-**Solution:** Adjust transition duration
-```css
-.nasi-goreng-button {
-    transition: transform 0.3s ease; /* Change 0.3s */
-}
-```
-
-### Issue: Colors look wrong in dark mode
-
-**Solution:** Clear localStorage and refresh
 ```javascript
-// In browser console:
-localStorage.clear();
-location.reload();
+// In script.js, add:
+const images = document.querySelectorAll('img[data-src]');
+images.forEach(img => {
+    img.src = img.dataset.src;
+});
 ```
 
 ---
 
-## 📈 Upgrade from V1.0
+## 🚀 Deployment Checklist
 
-### Migration Steps
+Before deploying to GitHub Pages:
 
-1. **Backup** your current V1.0 files
-2. **Replace** `index.html` with new version
-3. **Replace** `style.css` with new version
-4. **Keep** `script.js` (or use new version)
-5. **Keep** all files in `/pages` folder (unchanged)
-6. **Add** hero image to `/images` folder
-7. **Test** on desktop and mobile
+- [ ] All images are optimized (< 200 KB each)
+- [ ] Test slider on desktop browser
+- [ ] Test slider on mobile device
+- [ ] Test dark mode toggle
+- [ ] Test all button links work
+- [ ] Test responsive behavior at different screen sizes
+- [ ] Check browser console for errors
+- [ ] Verify all detail pages load correctly
+- [ ] Test back buttons on detail pages
+- [ ] Clear browser cache and test again
 
-### What's Preserved
-- ✅ All detail pages (no changes needed)
-- ✅ Theme toggle functionality
-- ✅ Page transition effects
-- ✅ File structure
-- ✅ localStorage data
+---
 
-### What's New
-- ✅ Rectangular layout
-- ✅ 16:9 hero image area
-- ✅ Auto-stacking mobile layout
-- ✅ New color palette
-- ✅ Improved hover animations
+## 📊 Browser Compatibility
+
+| Feature | Chrome | Firefox | Safari | Edge | Mobile |
+|---------|--------|---------|--------|------|--------|
+| Slider | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Auto-play | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Dark Mode | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Touch Swipe | N/A | N/A | N/A | N/A | ✅ |
+| Keyboard Nav | ✅ | ✅ | ✅ | ✅ | N/A |
+| localStorage | ✅ | ✅ | ✅ | ✅ | ✅ |
+
+**Minimum Versions:**
+- Chrome 90+
+- Firefox 88+
+- Safari 14+
+- Edge 90+
+- iOS Safari 14+
+- Chrome Mobile 90+
 
 ---
 
 ## 🎓 Learning Resources
 
-### CSS Grid Layout
-- [CSS Tricks - Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
-- [MDN - CSS Grid Layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout)
+### Understanding the Code
 
-### Responsive Design
-- [MDN - Responsive Design](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design)
-- [Web.dev - Responsive Images](https://web.dev/responsive-images/)
+**CSS Grid Layout:**
+- [CSS-Tricks Grid Guide](https://css-tricks.com/snippets/css/complete-guide-grid/)
 
-### CSS Animations
-- [CSS Tricks - CSS Animations](https://css-tricks.com/almanac/properties/a/animation/)
-- [MDN - Using CSS Transitions](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions)
+**CSS Custom Properties:**
+- [MDN CSS Variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)
 
----
+**JavaScript Intervals:**
+- [MDN setInterval](https://developer.mozilla.org/en-US/docs/Web/API/setInterval)
 
-## 🤝 Contributing
-
-Contributions welcome! Areas for improvement:
-
-- 📸 Better image optimization
-- ♿ Enhanced accessibility features
-- 🌐 Multi-language support
-- 🎨 Additional color themes
-- 📱 Progressive Web App (PWA) support
-- 🔍 Search functionality
+**localStorage API:**
+- [MDN localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
 
 ---
 
-## 📄 License
+## 📝 Changelog
+
+### Version 2.1 (Current)
+
+**Added:**
+- ✅ Working image slider with 6 Nasi Goreng varieties
+- ✅ Auto-play with 5-second intervals
+- ✅ Navigation buttons (prev/next)
+- ✅ Indicator dots for direct slide access
+- ✅ Touch swipe support for mobile
+- ✅ Keyboard arrow navigation
+- ✅ Pause on hover functionality
+
+**Fixed:**
+- ✅ Dark mode now affects all elements including slider
+- ✅ Theme persistence via localStorage
+- ✅ Slider transitions now smooth (1s fade)
+- ✅ Removed all redundant code
+- ✅ Fixed button hover effects
+- ✅ Mobile responsive layout
+
+**Improved:**
+- ✅ Complete code organization with clear sections
+- ✅ Comprehensive comments throughout all files
+- ✅ Better file separation (HTML/CSS/JS)
+- ✅ Semantic class naming
+- ✅ Performance optimizations
+- ✅ Accessibility improvements
+
+### Version 2.0 (Previous)
+- Rectangular layout introduced
+- Basic slider structure added (had bugs)
+
+---
+
+## 💡 Tips for Future Development
+
+### Want to add more slides?
+Just follow the pattern in HTML - the JavaScript automatically detects them!
+
+### Want to change transition type?
+Replace fade with slide animation in CSS:
+```css
+.slide {
+    transform: translateX(100%); /* Start off-screen */
+    transition: transform 1s ease;
+}
+
+.slide.active {
+    transform: translateX(0); /* Slide in */
+}
+```
+
+### Want to add slide indicators with preview images?
+```html
+<div class="slider-indicators">
+    <button class="indicator">
+        <img src="images/thumb1.jpg" alt="Slide 1">
+    </button>
+    <!-- Repeat for each slide -->
+</div>
+```
+
+---
+
+## 🆘 Support
+
+**Need help?**
+1. Check this README first
+2. Review code comments in files
+3. Use browser DevTools console
+4. Test in different browsers
+
+**Found a bug?**
+- Note the exact steps to reproduce
+- Check browser console for errors
+- Note which browser/device
+- Note which feature is affected
+
+---
+
+## 📜 License
 
 MIT License - Free to use and modify
 
 ---
 
-## 🎉 What's Next?
+## 🙏 Credits
 
-### Immediate Tasks
-1. ✅ Add your hero image (child with spoon and fork)
-2. ✅ Replace Lorem Ipsum with real content
-3. ✅ Add custom button icons
-4. ✅ Deploy to GitHub Pages
-
-### Future Enhancements
-- 📖 Recipe details and cooking instructions
-- ⭐ User ratings and reviews
-- 📍 Regional variations map
-- 🎥 Video tutorials
-- 🛒 Ingredient shopping list
-- 📱 Mobile app version
-
----
-
-## 📞 Support
-
-Need help?
-- **Issues**: [GitHub Issues](https://github.com/yourusername/ragam-nasi-goreng-indonesia/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/ragam-nasi-goreng-indonesia/discussions)
-
----
-
-## 🙏 Acknowledgments
-
-- **Design Inspiration**: Modern infographic layouts
-- **Google Fonts**: Nunito typeface
-- **Indonesian Culinary Culture**: Recipe inspiration
-- **Community**: All contributors and users
+- **Design**: Modern infographic layout
+- **Font**: Nunito (Google Fonts)
+- **Icons**: SVG arrows (inline)
+- **Images**: Indonesian fried rice photography
 
 ---
 
 **Made with ❤️ for Indonesian food lovers**
 
-🍚 **Selamat menikmati versi baru!** (Enjoy the new version!)
+🍚 **Selamat menikmati website yang sudah diperbaiki!** 
 
 ---
 
-*Last Updated: 10 November 2025 - Version 2.0.0*
+*Last Updated: November 14, 2025 - Version 2.1*
+*All bugs fixed, code cleaned, fully documented*
